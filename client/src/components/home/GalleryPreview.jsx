@@ -14,8 +14,11 @@ const GalleryPreview = () => {
     const fetchGallery = async () => {
       try {
         const response = await galleryAPI.getVisible();
-        // Show only first 3 items for preview
-        setItems(response.data.items.slice(0, 3));
+        // The API returns { success: true, data: { items: [...] } }
+        // axios response interceptor returns response.data (the body)
+        // So we need response.data.items
+        const galleryItems = response.data?.items || [];
+        setItems(galleryItems.slice(0, 3));
       } catch (error) {
         console.error('Failed to fetch gallery items:', error);
       } finally {

@@ -17,7 +17,7 @@ const GalleryPage = () => {
     const fetchGallery = async () => {
       try {
         const response = await galleryAPI.getVisible();
-        setItems(response.data.items);
+        setItems(response.data?.items || []);
       } catch (error) {
         console.error('Failed to fetch gallery', error);
       } finally {

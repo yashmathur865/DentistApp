@@ -23,6 +23,9 @@ const doctorRoutes = require('./routes/doctorRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust Render's proxy for rate limiting
+app.set('trust proxy', 1);
+
 // Connect to MongoDB
 connectDB();
 
