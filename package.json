@@ -1,0 +1,17 @@
+{
+  "name": "dentist-web-app",
+  "version": "1.0.0",
+  "description": "Premium dental clinic website with appointment booking and admin panel",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "client:dev": "cd client && npm run dev",
+    "server:dev": "cd server && npm run dev",
+    "client:build": "cd client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && node seed.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

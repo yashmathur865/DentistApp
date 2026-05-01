@@ -1,0 +1,95 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.service-preview-card {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: var(--accent-primary-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.service-icon {
+  font-size: 2rem;
+  transition: transform var(--transition-bounce);
+}
+
+.service-preview-card:hover .service-icon-wrapper {
+  background: var(--accent-gradient);
+}
+
+.service-preview-card:hover .service-icon {
+  transform: scale(1.1);
+  filter: brightness(0) invert(1);
+}
+
+.service-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.service-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-top: auto;
+}
+
+.service-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.service-preview-card:hover .service-link svg {
+  transform: translateX(5px);
+}
+
+/* Skeleton Loading */
+.services-skeleton {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skeleton-card {
+  height: 250px;
+  border-radius: var(--radius-xl);
+}
+
+@media (max-width: 992px) {
+  .services-skeleton {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-skeleton {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}

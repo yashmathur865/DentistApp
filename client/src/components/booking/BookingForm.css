@@ -1,0 +1,61 @@
+.booking-form-wrapper {
+  padding: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Unfolding Animation Classes */
+.step-container {
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-20px);
+}
+
+.step-visible {
+  opacity: 1;
+  max-height: 1000px; /* Arbitrary large number to allow content */
+  transform: translateY(0);
+  margin-top: 2rem;
+}
+
+.step-hidden {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-20px);
+  margin-top: 0;
+  pointer-events: none;
+}
+
+.patient-details-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .booking-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

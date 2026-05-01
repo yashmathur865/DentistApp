@@ -1,0 +1,72 @@
+.stats-section {
+  position: relative;
+  margin-top: -60px; /* Pull up to overlap hero */
+  z-index: 10;
+  padding: 0 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem 2rem;
+  background: var(--bg-glass);
+  border: 1px solid white;
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+}
+
+/* Vertical dividers */
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background: var(--border-light);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+  }
+  
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+  
+  .stats-section {
+    margin-top: -30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .stat-item::after {
+    display: none;
+  }
+}
